@@ -5,7 +5,7 @@ print("Welcome to the world of programming!")
 print(4)
 
 #Next Line after print
-print("Hello Python \n")
+print("Hello Python \n\n welcome to coding")
 
 #Pass multiple arguments for printing
 print("hello",5)
