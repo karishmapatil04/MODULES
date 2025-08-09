@@ -1,8 +1,9 @@
-x = 5
-print(x)
 
 y="my name is karishma"
-print(y)
+z=" welcome to coding"
 
-z= 1.78
-print(z)
+print("joined string:",y+z)
+
+
+str="string"
+print(str[::-1])

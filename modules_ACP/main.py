@@ -1,11 +1,17 @@
+"""x=17
+y=25
 
+if(x>y):
+ print("x is greater then y")
+else:
+ print("y is greater then x")"""
 
-text = str(input("Enter a string: "))
+costprice =int(input("enter the cp: "))
+sellingprice =int(input("enter the sp: "))
 
-# Reverse String 
-# using step value as -1 to iterate in reverse
-'''revText = text[3::1] 
-text = revText'''
-
-print("Reverse of Given String is:")
-print(text[5])
+if(sellingprice>costprice):
+  print("profit")
+  pt=sellingprice-costprice
+  print(pt)
+else :
+  print("No profit")
