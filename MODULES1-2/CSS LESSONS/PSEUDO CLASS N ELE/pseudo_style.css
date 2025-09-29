@@ -1,0 +1,45 @@
+/*ADVANCE SELECTOR*/
+
+/*Attribute selector*/
+input[type="text"]{
+    border:2px solid red;
+}
+input[type="password"]{
+    border:2px dashed green;
+}
+/*child selector*/
+ul>li{
+    color:blue;
+}
+/*sibling selector*/
+h1+p+p{
+    background-color: green;
+}
+
+/*PSEUDO CLASSES*/
+/*hover*/
+a:hover{
+    color:blueviolet;
+}
+/*nth-child*/
+li:nth-child(2){
+    background-color: brown;
+}
+/*not-selector*/
+div:not(.c1){
+    font-size:30px;
+}
+
+/*PSEUDO ELEMENTS*/
+a::after{
+    content:"*";
+    COLOR:RED;
+}
+a::before{
+    content:"&";
+    color:green;
+}
+div::first-letter{
+    color:orange;
+    font-size: 40px;
+}
