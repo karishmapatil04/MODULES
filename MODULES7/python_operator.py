@@ -1,28 +1,21 @@
-# Taking total amount as input from user
-Amount =int(input("Please Enter Amount for Withdraw :"))
+num1 = 45
+num2 = 3
 
-# Calculating the number of notes of different denominations
-note_1 = Amount//100
-note_2 = (Amount%100)//50
-note_3 = ((Amount%100)%50)//10
+print("Number 1", num1)
+print("Number 2", num2)
+print("Addition :", num1+num2)
+print("Difference :", num1-num2)
+print("Product :", num1*num2)
+print("Division :", num1/num2)
+print("Floor Division :", num1//num2)
+print("Modulus Operation :", num1%num2)
+print("Square :", num2**2)
+print("Square Root :", num1**0.5)
 
+print("Equal ?", num1==num2)
+print("Number 1 greater?", num1>num2)
+print("Number 2 greater?", num1<num2)
+print("Not Equal ?", num1!=num2)
 
-print( "notes of 100 rupee" , note_1)
-print("notes of 50 rupee" , note_2)
-print("notes of 10 rupee" , note_3)
-
-
-#pgm for calculating total number of years,weeks and days
-print("Enter the Number of Days: ")
-num = int(input())
-
-year = int(num/365)
-week = int((num%365)/7)
-days = int((num%365)%7)
-
-print("Total Number of Year(s): ")
-print(year)
-print("Total Number of Week(s):")
-print(week)
-print("Total Number of Day(s):")
-print(days)
+result = num1/2+num2**2+10
+print("Result of given equation is:", result)
