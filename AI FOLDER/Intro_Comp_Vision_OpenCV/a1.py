@@ -1,7 +1,7 @@
 import cv2
 
 # Load the image
-image = cv2.imread('example.jpg')
+image = cv2.imread('C:\\Users\\samai\\OneDrive\\Documents\\Codingal_Learn\\webdev course\\MODULES\\AI FOLDER\\Intro_Comp_Vision_OpenCV\\example.jpg')
 
 # Resize the window to a specific size without resizing the image
 cv2.namedWindow('Loaded Image', cv2.WINDOW_NORMAL)  # Create a resizable window

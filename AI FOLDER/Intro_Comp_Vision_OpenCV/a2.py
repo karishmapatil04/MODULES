@@ -1,7 +1,7 @@
 import cv2
 
 # Load the image
-image = cv2.imread('example.jpg')
+image = cv2.imread('C:\\Users\\samai\\OneDrive\\Documents\\Codingal_Learn\\webdev course\\MODULES\\AI FOLDER\\Intro_Comp_Vision_OpenCV\\example.jpg')
 
 # Convert the image to grayscale
 gray_image = cv2.cvtColor(image, cv2.COLOR_BGR2GRAY)
