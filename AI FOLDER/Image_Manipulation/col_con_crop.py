@@ -3,7 +3,7 @@
 import cv2
 import matplotlib.pyplot as plt
 
-image = cv2.imread('example.jpg')
+image = cv2.imread('C:\\Users\\samai\\OneDrive\\Documents\\Codingal_Learn\\webdev course\\MODULES\\AI FOLDER\\image_manipulation\\example.jpg')
 
 # Convert BGR to RGB
 image_rgb = cv2.cvtColor(image, cv2.COLOR_BGR2RGB)
