@@ -2,7 +2,7 @@ import cv2
 import matplotlib.pyplot as plt
 
 # Step 1: Load the Image
-image_path = 'example.jpg'  # User-provided image path
+image_path = 'C:\\Users\\samai\\OneDrive\\Documents\\Codingal_Learn\\webdev course\\MODULES\\AI FOLDER\\image_annotation\\example.jpg'  # User-provided image path
 image = cv2.imread(image_path)
 
 # Convert BGR to RGB for correct color display with matplotlib
