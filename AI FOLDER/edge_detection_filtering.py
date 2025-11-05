@@ -60,6 +60,7 @@ def interactive_edge_detection(image_path):
         elif choice == "3":
             result = apply_edge_detection(image, method="laplacian")
             display_image("Laplacian Edge Detection", result)
+            
         elif choice == "4":
             ksize = int(input("Enter kernel size for Gaussian smoothing (odd number): "))
             result = apply_filter(image, filter_type="gaussian", ksize=ksize)

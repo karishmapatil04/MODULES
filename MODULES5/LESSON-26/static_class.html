@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html>
-
 <body>
     <h2>JavaScript Class Static Methods</h2>
     <p>A static method is created with the "static" keyword, and you can only call the method on the class itself.</p>
@@ -23,13 +22,10 @@
             }
         }
         myname = new Student("Carol");
-        //Call 'hello()' on the class Student and NOT on the 'myname' object because 'hello()' is a static method it cannot access object
         document.getElementById("hello").innerHTML = Student.hello();
-        // Call 'hi()' on the 'myname' object:
         document.getElementById("hi").innerHTML = myname.hi();
         // Call 'welcome()' can access the object since parameter is passed
         document.getElementById("welcome").innerHTML = Student.welcome(myname);
     </script>
 </body>
-
 </html>
