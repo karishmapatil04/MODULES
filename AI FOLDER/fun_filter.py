@@ -33,7 +33,7 @@ def save_image(image):
     """Allow the user to save the filtered image."""
     filename = input("Enter a name for the image (without extension): ")
     filename = "".join(c for c in filename if c.isalnum() or c in ('_', '-'))  # Sanitize filename
-    cv2.imwrite(f"images/{filename}.png", image)
+    cv2.imwrite(f"C:\\Users\\samai\\OneDrive\\Documents\\Codingal_Learn\\webdev course\\MODULES\\AI FOLDER\\images\\{filename}.png", image)
     print(f"Image saved as {filename}.png")
 
 def interactive_color_filter(image_path):

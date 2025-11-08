@@ -1,5 +1,6 @@
 # Function to calculate factorial
 def factorial(n):
+    '''This function is for recursive function'''
     if n == 0 or n == 1:  # Base case: 0! and 1! are both 1
         return 1
     else:
@@ -12,4 +13,5 @@ num = int(input("Enter a number: "))
 if num < 0:
     print("Factorial does not exist for negative numbers.")
 else:
+    print(factorial.__doc__)
     print(f"The factorial of {num} is {factorial(num)}")
