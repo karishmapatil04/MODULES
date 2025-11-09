@@ -3,7 +3,7 @@
 
 from huggingface_hub import InferenceClient
 
-client = InferenceClient(api_key="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")
+client = InferenceClient(api_key="API_KEY_PASTE_HERE")
 
 text = "I love Python!"
 result = client.text_classification(text=text)
@@ -16,7 +16,7 @@ print(f"Sentiment: {top.label} ({top.score:.2%} confidence)")'''
 *SECOND WORKING CODE*
 from huggingface_hub import InferenceClient
 
-HF_API_KEY = "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"
+HF_API_KEY = "API_KEY_PASTE_HERE"
 
 # ✅ New-style client (auto routes via latest inference API)
 client = InferenceClient(api_key=HF_API_KEY)
@@ -37,7 +37,7 @@ for r in result:
 import requests
 
 def classify_text(text):
-    HF_API_KEY = ""
+    HF_API_KEY = "API_KEY_PASTE_HERE"
     # Correct endpoint (no router)
     API_URL = "https://router.huggingface.co/hf-inference/models/distilbert/distilbert-base-uncased-finetuned-sst-2-english"
     
