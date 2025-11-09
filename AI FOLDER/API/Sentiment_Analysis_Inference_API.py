@@ -37,7 +37,7 @@ for r in result:
 import requests
 
 def classify_text(text):
-    HF_API_KEY = "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"
+    HF_API_KEY = ""
     # Correct endpoint (no router)
     API_URL = "https://router.huggingface.co/hf-inference/models/distilbert/distilbert-base-uncased-finetuned-sst-2-english"
     
