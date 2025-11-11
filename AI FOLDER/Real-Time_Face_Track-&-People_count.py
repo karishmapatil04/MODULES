@@ -2,6 +2,7 @@ import cv2
 
 # Load pre-trained Haar Cascade Classifier for face detection
 face_cascade = cv2.CascadeClassifier(cv2.data.haarcascades + 'haarcascade_frontalface_default.xml')
+#print(face_cascade)
 # Initialize video capture (use webcam)
 cap = cv2.VideoCapture(0)
 if not cap.isOpened():
@@ -22,8 +23,8 @@ while True:
     for (x, y, w, h) in faces:
         cv2.rectangle(frame, (x, y), (x + w, y + h), (255, 0, 0), 2)
     # Display the count of faces
-    '''font = cv2.FONT_HERSHEY_SIMPLEX
-    cv2.putText(frame, f'People Count: {len(faces)}', (10, 30), font, 1, (255, 0, 0), 2, cv2.LINE_AA)'''
+    font = cv2.FONT_HERSHEY_SIMPLEX
+    cv2.putText(frame, f'People Count: {len(faces)}', (10, 30), font, 1, (255, 0, 0), 2, cv2.LINE_AA)
     # Display the frame with face detection and people count
     cv2.imshow('Face Tracking and Counting', frame)
     # Exit the loop when the 'q' key is pressed
