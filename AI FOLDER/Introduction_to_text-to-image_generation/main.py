@@ -21,7 +21,7 @@ def generate_image_from_text(prompt: str, negative_prompt: str = None) -> Image.
 
     """
 
-    headers = {"Authorization": f"Bearer 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"}
+    headers = {"Authorization": f"Bearer API_KEY_HERE"}
 
  
 
