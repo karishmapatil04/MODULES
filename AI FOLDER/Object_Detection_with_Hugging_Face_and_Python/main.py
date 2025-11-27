@@ -6,7 +6,7 @@ from PIL import Image, ImageDraw, ImageFont
 from config import HF_API_KEY
 
 MODEL = "facebook/detr-resnet-50"
-API = f"https://api-inference.huggingface.co/models/{MODEL}"
+API = f"https://router.huggingface.co/hf-inference/models/{MODEL}"
 ALLOWED, MAX_MB = {".jpg",".jpeg",".png",".bmp",".gif",".webp",".tiff"}, 8
 EMOJI = {"person":"🧍","car":"🚗","truck":"🚚","bus":"🚌","bicycle":"🚲","motorcycle":"🏍️","dog":"🐶","cat":"🐱",
          "bird":"🐦","horse":"🐴","sheep":"🐑","cow":"🐮","bear":"🐻","giraffe":"🦒","zebra":"🦓","banana":"🍌",

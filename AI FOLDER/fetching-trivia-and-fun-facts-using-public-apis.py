@@ -3,7 +3,7 @@ import random
 import html
 # Education-focused categories (General Knowledge, Science, History, etc.)
 EDUCATION_CATEGORY_ID = 9  # General Knowledge category (most educational)
-API_URL = f"https://opentdb.com/api.php?amount=10&category={EDUCATION_CATEGORY_ID}&type=multiple"
+API_URL = f"https://opentdb.com/api.php?amount=3&category={EDUCATION_CATEGORY_ID}&type=multiple"
 def get_education_questions():
     response = requests.get(API_URL)
     if response.status_code == 200:

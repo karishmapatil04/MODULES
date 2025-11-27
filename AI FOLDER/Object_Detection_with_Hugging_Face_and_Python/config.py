@@ -1,1 +1,1 @@
-HF_API_KEY = "ENTER YOUR API KEY here"
+HF_API_KEY = "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"
