@@ -37,7 +37,7 @@ for r in result:
 import requests
 
 def classify_text(text):
-    HF_API_KEY = "API_KEY_HERE"
+    HF_API_KEY = ""
     # Correct endpoint (no router)
     API_URL = "https://router.huggingface.co/hf-inference/models/distilbert/distilbert-base-uncased-finetuned-sst-2-english"
     
@@ -56,7 +56,7 @@ def classify_text(text):
         return None
 
 if __name__ == "__main__":
-    sample_text = "I  using Hugging Face APIs!"
+    sample_text = "I love using Hugging Face APIs!"
     result = classify_text(sample_text)
     print(result)
 
