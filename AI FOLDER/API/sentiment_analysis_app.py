@@ -5,7 +5,7 @@ api_url = "https://router.huggingface.co/hf-inference/models/distilbert/distilbe
 
 # Replace with your Hugging Face API token
 headers = {
-    "Authorization": "Bearer "
+    "Authorization": "Bearer API_KEY_HERE"
 }
 
 # Sample text for sentiment analysis

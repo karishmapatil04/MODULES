@@ -12,7 +12,7 @@ def build_api_url(model_name):
 def query(payload, model_name=DEFAULT_MODEL):
     """Sends a POST request to the Hugging Face API using the specified model."""
     api_url = build_api_url(model_name)
-    headers = {"Authorization": f"Bearer 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"}
+    headers = {"Authorization": f"Bearer API_KEY_HERE"}
     response = requests.post(api_url, headers=headers, json=payload)
     return response.json()
 

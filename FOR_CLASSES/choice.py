@@ -1,3 +1,5 @@
-decimal = int(input("Enter a decimal number: "))
-binary = bin(decimal)
-print("The binary conversion of", decimal, "is", binary[2:])
+tup1 = (4,3,2,2,-1,18)
+tup2 = (2,4,8,8,3,2,9)
+
+for i in range(len(tup1)):
+    print(tup1[i] * tup2[i])
