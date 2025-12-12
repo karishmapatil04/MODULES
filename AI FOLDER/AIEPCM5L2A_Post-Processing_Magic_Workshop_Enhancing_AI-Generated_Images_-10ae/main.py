@@ -7,10 +7,7 @@ def generate_image_from_text(prompt):
     """
     Generates an image from a text prompt using the Stable Diffusion API.
     """
-    API_URL = "https://router.huggingface.co/models/stabilityai/stable-diffusion-2-1"
-
-
-
+    API_URL = "https://api-inference.huggingface.co/models/stabilityai/stable-diffusion-3-medium-diffusers"
     headers = {"Authorization": f"Bearer {HF_API_KEY}"}
     payload = {"inputs": prompt}
     
