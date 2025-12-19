@@ -1,9 +1,8 @@
+print(4)
+print("Welcome to codingal\nFor coding journey",3+4)
 
+x=float(input("Enter the number for conversion"))
+print(int(x))
 
-num = -4
-if num>0:
-    print("Number is lesser the 0")    
-
-num = 6
-if num > 0:
-    print("Number is greater then O")
+import keyword
+print("list of keywords",keyword.kwlist)

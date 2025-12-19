@@ -1,47 +1,134 @@
 from config import HF_API_KEY
-import requests, io, json
+import requests
 from PIL import Image
-from colorama import Fore, Style, init
+import io
+import os
+from colorama import init, Fore, Style
+import json
+
+# Initialize Colorama
 init(autoreset=True)
 
-
-def get_caption(image):
-    url = "https://router.huggingface.co/models/nlpconnect/vit-gpt2-image-captioning"
+# -----------------------------------------------------------------------------
+# Utility function for text-generation models
+# -----------------------------------------------------------------------------
+def query_hf_api(api_url, payload):
     headers = {"Authorization": f"Bearer {HF_API_KEY}"}
-    buf = io.BytesIO()
-    image.save(buf, format="JPEG")
-    res = requests.post(url, headers=headers, data=buf.getvalue())
-    return res.json()[0]["generated_text"]
+    response = requests.post(api_url, headers=headers, json=payload)
 
+    if response.status_code != 200:
+        raise Exception(f"Status {response.status_code}: {response.text}")
 
-def expand_caption(caption):
-    url = "https://router.huggingface.co/models/gpt2"
+    return response.json()
+
+# -----------------------------------------------------------------------------
+# Image captioning
+# -----------------------------------------------------------------------------
+def get_basic_caption(image, model="nlpconnect/vit-gpt2-image-captioning"):
+    print(f"{Fore.YELLOW}Generating basic caption...")
+
+    api_url = f"https://router.huggingface.co/models/{model}"
+
+    buffered = io.BytesIO()
+    image.save(buffered, format="JPEG")
+    buffered.seek(0)
+
     headers = {"Authorization": f"Bearer {HF_API_KEY}"}
+    response = requests.post(api_url, headers=headers, data=buffered.getvalue())
+
+    if response.status_code != 200:
+        return f"[Error] {response.status_code}: {response.text}"
+
+    result = response.json()
+
+    if isinstance(result, dict) and "error" in result:
+        return f"[Error] {result['error']}"
+
+    return result[0].get("generated_text", "No caption generated.")
+
+# -----------------------------------------------------------------------------
+# Text generation
+# -----------------------------------------------------------------------------
+def generate_text(prompt, model="gpt2", max_new_tokens=60):
+    print(f"{Fore.CYAN}Generating text...")
+
+    api_url = f"https://router.huggingface.co/models/{model}"
     payload = {
-        "inputs": f"Expand this caption into 30 words: {caption}",
-        "parameters": {"max_new_tokens": 50}
+        "inputs": prompt,
+        "parameters": {"max_new_tokens": max_new_tokens}
     }
-    res = requests.post(url, headers=headers, json=payload)
-    text = json.loads(res.content)[0]["generated_text"]
-    return " ".join(text.split()[:30])
 
+    result = query_hf_api(api_url, payload)
 
+    if isinstance(result, dict) and "error" in result:
+        raise Exception(result["error"])
+
+    return result[0].get("generated_text", "")
+
+# -----------------------------------------------------------------------------
+# Helpers
+# -----------------------------------------------------------------------------
+def truncate_text(text, word_limit):
+    words = text.strip().split()
+    return " ".join(words[:word_limit])
+
+def print_menu():
+    print(f"""{Style.BRIGHT}
+{Fore.GREEN}================ Image-to-Text Conversion =================
+1. Caption (5 words)
+2. Description (30 words)
+3. Summary (50 words)
+4. Exit
+============================================================
+""")
+
+# -----------------------------------------------------------------------------
+# Main program
+# -----------------------------------------------------------------------------
 def main():
-    path = input("Enter image path: ").strip()
+    image_path = input(f"{Fore.BLUE}Enter image path: ")
+
+    if not os.path.exists(image_path):
+        print(f"{Fore.RED}File does not exist.")
+        return
+
     try:
-        image = Image.open(path)
-        print(Fore.YELLOW + "Generating caption...")
-        caption = get_caption(image)
-        print(Fore.GREEN + "Caption: " + Style.BRIGHT + caption)
-
-        more = input("Expand to 30 words? (y/n): ").strip().lower()
-        if more == "y":
-            print(Fore.YELLOW + "Expanding...")
-            description = expand_caption(caption)
-            print(Fore.GREEN + "Expanded: " + Style.BRIGHT + description)
+        image = Image.open(image_path)
     except Exception as e:
-        print(Fore.RED + f"Error: {e}")
+        print(f"{Fore.RED}Failed to open image: {e}")
+        return
 
+    basic_caption = get_basic_caption(image)
+    print(f"{Fore.YELLOW}Basic caption: {Style.BRIGHT}{basic_caption}\n")
+
+    while True:
+        print_menu()
+        choice = input(f"{Fore.CYAN}Enter choice (1-4): ")
+
+        if choice == "1":
+            print(f"{Fore.GREEN}Caption: {truncate_text(basic_caption, 5)}\n")
+
+        elif choice == "2":
+            prompt = f"Expand this caption into exactly 30 words: {basic_caption}"
+            try:
+                text = generate_text(prompt, max_new_tokens=40)
+                print(f"{Fore.GREEN}Description: {truncate_text(text, 30)}\n")
+            except Exception as e:
+                print(f"{Fore.RED}{e}")
+
+        elif choice == "3":
+            prompt = f"Summarize this image in exactly 50 words: {basic_caption}"
+            try:
+                text = generate_text(prompt, max_new_tokens=70)
+                print(f"{Fore.GREEN}Summary: {truncate_text(text, 50)}\n")
+            except Exception as e:
+                print(f"{Fore.RED}{e}")
+
+        elif choice == "4":
+            print(f"{Fore.GREEN}Goodbye!")
+            break
+        else:
+            print(f"{Fore.RED}Invalid choice.")
 
 if __name__ == "__main__":
     main()

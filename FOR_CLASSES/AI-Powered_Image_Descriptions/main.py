@@ -3,7 +3,7 @@ from config import HF_API_KEY
 
 # Model endpoint on Hugging Face
 MODEL_ID = "nlpconnect/vit-gpt2-image-captioning"
-API_URL = f"https://api-inference.huggingface.co/models/{MODEL_ID}"
+API_URL = f"https://router.huggingface.co/models/{MODEL_ID}"
 
 # Prepare headers with your API key
 headers = {
@@ -15,7 +15,7 @@ def caption_single_image():
     Loads the local image file "test.jpg" and sends it to the
     Hugging Face Inference API for captioning.
     """
-    image_source = "test.jpg"  # Hardcoded filename
+    image_source = "C:\\Users\\samai\\OneDrive\\Documents\\Codingal_Learn\\webdev course\\MODULES\\FOR_CLASSES\\AI-Powered_Image_Descriptions\\test.jpg"  # Hardcoded filename
     
     # 1. Load image bytes
     try:

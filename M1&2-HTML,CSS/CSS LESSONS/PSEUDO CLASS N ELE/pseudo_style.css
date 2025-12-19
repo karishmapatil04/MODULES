@@ -12,17 +12,17 @@ ul>li{
     color:blue;
 }
 /*sibling selector*/
-h1+p+p{
+h1+p{
     background-color: green;
 }
 
 /*PSEUDO CLASSES*/
 /*hover*/
 a:hover{
-    color:blueviolet;
+    color:rgb(226, 43, 43);
 }
 /*nth-child*/
-li:nth-child(2){
+li:nth-child(3){
     background-color: brown;
 }
 /*not-selector*/
@@ -33,11 +33,11 @@ div:not(.c1){
 /*PSEUDO ELEMENTS*/
 a::after{
     content:"*";
-    COLOR:RED;
+    COLOR:rgb(0, 255, 106);
 }
 a::before{
     content:"&";
-    color:green;
+    color:rgb(238, 71, 224);
 }
 div::first-letter{
     color:orange;
