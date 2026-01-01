@@ -1,5 +1,5 @@
 # Zip elements of two lists
-s2 = {2, 3, 1, 76, 22}
+s2 = {'a','c', 'b', 'e', 'f'}
 s1 = {1, 5, 9, 8, 7}
 s3 = list(zip(s1, s2))
 print(s3,"\n")
@@ -18,6 +18,5 @@ for x, y in zip(list1, list2[::-1]):
 stocks = ['reliance', 'infosys', 'tcs']
 prices = [2175, 1127, 2750]
 
-new_dict = {stocks: prices for stocks,
-			prices in zip(stocks, prices)}
-print('\n{}'.format(new_dict))
+new_dict = {stocks: prices for stocks, prices in zip(stocks, prices)}
+print('\nOur {} new list'.format(new_dict))

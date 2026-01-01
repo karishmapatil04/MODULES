@@ -3,7 +3,7 @@ import random
 import time
 
 # Pick a number between 1 and 100
-number=random.randint(1, 100) 
+number=random.randint(1, 10) 
 
 def intro():
 	print("May I ask you for your name?")
@@ -34,7 +34,7 @@ def pick():
 			#stores the guess as an integer instead of a string 
 			guess = int(enter)    
 
-			if guess<=100 and guess>=1: #if they are in range
+			if guess<=10 and guess>=1: #if they are in range
 				guessesTaken=guessesTaken+1 #adds one guess each time the player is wrong
 				if guessesTaken<6:
 					if guess<number:
@@ -50,7 +50,7 @@ def pick():
 						break 
 
 			
-			if guess>100 or guess<1: 
+			if guess>10 or guess<1: 
 				print("Silly Goose! That number isn't in the range!")
 				time.sleep(.25)
 				print("Please enter a number between 1 and 100")
