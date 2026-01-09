@@ -12,7 +12,7 @@ class Animal(ABC):
 class Human(Animal):
 
 	def move(self):
-		print("I can walk and run")
+		print("I can walk and run1")
 
 class Snake(Animal):
 
@@ -30,6 +30,7 @@ class Lion(Animal):
 		print("I can roar")
 		
 # Driver code
+
 R = Human()
 R.move()
 

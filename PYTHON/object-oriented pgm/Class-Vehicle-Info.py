@@ -6,7 +6,6 @@ class Vehicle:
 		# bind the arguments
         self.max_speed = max_speed
         self.mileage = mileage
-        print(max_speed)
 
     def display(self):
         print("max speed :",self.max_speed)
@@ -16,5 +15,5 @@ modelX = Vehicle(240, 18)
 modelX.display()
 
 # access the variables inside init method
-#print("Model Max Speed:",modelX.max_speed)
-#print("Model Mileage:", modelX.mileage)
+print("Model Max Speed:",modelX.max_speed)
+print("Model Mileage:", modelX.mileage)

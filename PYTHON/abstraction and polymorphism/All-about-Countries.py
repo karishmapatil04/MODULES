@@ -7,7 +7,7 @@ class India():
         print("Hindi is the most widely spoken language of India.")
  
     def type(self):
-        print("India is a developing country.")
+        print("India is a developing country.\n")
  
 # Class 2
 class USA():

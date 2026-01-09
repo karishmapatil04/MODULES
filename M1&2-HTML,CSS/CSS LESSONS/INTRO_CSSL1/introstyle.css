@@ -25,7 +25,6 @@ h4 {
 }
 
 /* group selector */
-h5,
-p {
+h5,p{
     color: maroon;
 }
