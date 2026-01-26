@@ -1,16 +1,16 @@
 # parent class
-class Person( object ):	
+class Person(object):	
 
 		# __init__ is known as the constructor		
 		def __init__(self, name, idnumber):
 				self.name = name
 				self.idnumber = idnumber
 		def display(self):
-				print(self.name)
-				print(self.idnumber)
+				print("name:",self.name)
+				print("id number:",self.idnumber)
 
 # child class
-class Employee( Person ):		
+class Employee(Person):		
 		def __init__(self, name, idnumber, salary, post):
 				self.salary = salary
 				self.post = post

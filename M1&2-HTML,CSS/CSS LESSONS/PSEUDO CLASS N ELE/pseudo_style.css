@@ -1,6 +1,6 @@
 /*ADVANCE SELECTOR*/
 
-/*Attribute selector*/
+/*Attribute selector - this is comments*/
 input[type="text"]{
     border:2px solid red;
 }
@@ -12,7 +12,7 @@ ul>li{
     color:blue;
 }
 /*sibling selector*/
-h1+p{
+h1+p+p{
     background-color: green;
 }
 
@@ -22,7 +22,7 @@ a:hover{
     color:rgb(226, 43, 43);
 }
 /*nth-child*/
-li:nth-child(3){
+li:nth-child(2){
     background-color: brown;
 }
 /*not-selector*/

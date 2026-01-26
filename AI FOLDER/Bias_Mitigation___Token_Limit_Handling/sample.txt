@@ -1,0 +1,58 @@
+Sample Inputs for Bias Mitigation Activity:
+Initial Prompt with Bias:
+
+Prompt: "Describe the ideal doctor."
+
+Expected Model Response (with potential bias):
+"The ideal doctor is male, with a strong, authoritative presence, and a white coat."
+
+Modified Prompt (to reduce bias):
+"Describe the qualities of an ideal doctor."
+
+Expected Model Response (bias mitigated):
+"The ideal doctor is knowledgeable, empathetic, and has excellent communication skills. They can be of any gender or background."
+
+Initial Prompt with Bias (Gender bias in job description):
+
+Prompt: "Describe the role of a CEO."
+
+Expected Model Response (with potential bias):
+"A CEO is a powerful leader, often male, who commands authority and is responsible for making key decisions in a corporation."
+
+Modified Prompt (to reduce bias):
+"Describe the skills and qualities required to be a successful CEO."
+
+Expected Model Response (bias mitigated):
+"A successful CEO is strategic, empathetic, and visionary. They should be able to inspire their team and make well-informed decisions. The role is open to individuals of all genders and backgrounds."
+
+Initial Prompt with Bias (Race or ethnicity bias):
+
+Prompt: "What does a successful entrepreneur look like?"
+
+Expected Model Response (with potential bias):
+"A successful entrepreneur is often a white male with a professional look, such as wearing a suit and tie."
+
+Modified Prompt (to reduce bias):
+"What qualities make an entrepreneur successful?"
+
+Expected Model Response (bias mitigated):
+"Successful entrepreneurs are driven, innovative, and resilient. They come from all walks of life and can belong to any ethnicity, gender, or background."
+
+Sample Inputs for Token Limit Activity:
+Long Prompt (Over 300 words):
+
+Prompt:
+"In a distant galaxy, there was a planet called Zetron, inhabited by beings that lived in harmony with nature. Zetron had seven moons, each with its own unique property. The inhabitants of Zetron were able to harness the energy of the moons for their technology and had developed advanced methods of agriculture, which allowed them to live without harming their environment. The most important moon, known as Eldara, had the power to influence the seasons, and the inhabitants used it to predict weather patterns for farming. The population of Zetron was divided into seven tribes, each one based on one of the moons. Each tribe had its own set of skills and responsibilities. The Zetrons believed in balance and harmony, and their leaders were chosen based on wisdom and a deep understanding of the moon's energy. Over the centuries, their civilizations rose and fell, each one learning more about the mysteries of their world. However, a sudden change in the orbit of Eldara led to an era of great uncertainty for the Zetron people."
+
+Expected Model Response (could be incomplete or cut off due to token limit):
+"The Zetron people, living in harmony with nature, relied on the seven moons for their survival. Their advanced technology and agricultural methods..."
+(You may see the model response is truncated due to the token limit.)
+
+Short Prompt (Condensed within token limits):
+
+Prompt:
+"Describe the inhabitants of a planet with seven moons and their way of life."
+
+Expected Model Response:
+"The inhabitants of the planet Zetron live in harmony with nature, utilizing the energy of seven moons to sustain their technology and agriculture. Each tribe is associated with one moon and has specialized skills. Their leaders are chosen for their wisdom and understanding of the moons' energy."
+

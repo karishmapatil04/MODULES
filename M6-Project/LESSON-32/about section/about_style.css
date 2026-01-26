@@ -1,4 +1,7 @@
 /* About Section */
+html,body{
+    background: #252525;
+}
 .about {
     background: #252525;
     border-radius: 0.5rem;

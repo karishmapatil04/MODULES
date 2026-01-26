@@ -16,5 +16,5 @@ class Parrot:
 blu = Parrot("Blu", 10)
 
 # call our instance methods
-print(blu.sing("'Happy'"))
+print(blu.sing('"Happy"'))
 print(blu.dance())

@@ -5,6 +5,7 @@ if rowSize%2==0: #conditions
 else:
   halfDiamRow = int(rowSize/2)+1
 space = halfDiamRow-1
+
 #loop for upper part 
 for i in range(1, halfDiamRow+1): #loop for rows
   for j in range(1, space+1): #loop for columns
@@ -16,7 +17,9 @@ for i in range(1, halfDiamRow+1): #loop for rows
   #incerementing number at each column
     num = num+1
   print()
+  
 space = 1
+
 #loop for lower part
 for i in range(1, halfDiamRow): #loop for rows
   for j in range(1, space+1):  #loop for columns

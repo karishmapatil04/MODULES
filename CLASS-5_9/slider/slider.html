@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <style>
+        html{
+            background-color: black;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Slide Show -->
+    <section>
+        <img class="mySlides" src="flower.jpg" style="height:500px;">
+        <img class="mySlides" src="the-ball.jpg" style="height:500px;">
+        <img class="mySlides" src="download.png" style="height:500px;">
+    </section>
+
+    <script>
+        // Automatic Slideshow - change image every 3 seconds
+        var myIndex = 0;
+        carousel();
+
+        function carousel() {
+            var i;
+            var x = document.getElementsByClassName("mySlides");
+
+            for (i = 0; i < x.length; i++) {
+                x[i].style.display = "none";
+            }
+
+            myIndex++;
+            if (myIndex > x.length) {
+                myIndex = 1;
+            }
+
+            x[myIndex - 1].style.display = "block";
+            setTimeout(carousel, 1000);
+        }
+    </script>
+
+</body>
+
+</html>
