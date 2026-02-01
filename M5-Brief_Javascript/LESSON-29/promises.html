@@ -11,14 +11,14 @@
             var sum = a + b;
             myDisplayer(sum);
         }
-        let myPromise = new Promise(function (myResolve, myReject) {
+        let myPromise = new Promise(function (myresolve, myreject) {
             // producing code may take some time
             let x = 0; // some code (try to change x to 5)
 
             if (x == 0) {
-                myResolve("OK"); // when successfull
+                myresolve("OK"); // when successfull
             } else {
-                myReject("Error"); // when error
+                myreject("Error"); // when error
             }
         });
         // consuming code - must wait for fullfilled promise

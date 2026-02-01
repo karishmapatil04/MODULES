@@ -24,7 +24,6 @@ screen = pygame.display.set_mode((SCREEN_WIDTH, SCREEN_HEIGHT))
 background = pygame.image.load(r"C:\Users\samai\OneDrive\Documents\Codingal_Learn\webdev course\MODULES\PYTHON\space invader game\space.png")
 background = pygame.transform.scale(background, (800, 500))
 
-
 # Caption and Icon
 pygame.display.set_caption("Space Invader")
 icon = pygame.image.load(r"C:\Users\samai\OneDrive\Documents\Codingal_Learn\webdev course\MODULES\PYTHON\space invader game\ufo.png")
@@ -34,7 +33,6 @@ pygame.display.set_icon(icon)
 # Player
 playerImg = pygame.image.load(r"C:\Users\samai\OneDrive\Documents\Codingal_Learn\webdev course\MODULES\PYTHON\space invader game\player.png")
 playerImg = pygame.transform.scale(playerImg, (64, 64))
-
 playerX = PLAYER_START_X
 playerY = PLAYER_START_Y
 playerX_change = 0
@@ -51,8 +49,8 @@ for _i in range(num_of_enemies):
     enemy_image = pygame.image.load(r"C:\Users\samai\OneDrive\Documents\Codingal_Learn\webdev course\MODULES\PYTHON\space invader game\enemy.png"
     )
     enemy_image = pygame.transform.scale(enemy_image, (64, 64))
-
     enemyImg.append(enemy_image)
+
     enemyX.append(random.randint(0, SCREEN_WIDTH - 64))  # 64 is the size of the enemy
     enemyY.append(random.randint(ENEMY_START_Y_MIN, ENEMY_START_Y_MAX))
     enemyX_change.append(ENEMY_SPEED_X)
@@ -61,7 +59,6 @@ for _i in range(num_of_enemies):
 # Bullet
 bulletImg = pygame.image.load(r"C:\Users\samai\OneDrive\Documents\Codingal_Learn\webdev course\MODULES\PYTHON\space invader game\bullet.png")
 bulletImg = pygame.transform.scale(bulletImg, (16, 24))
-playerImg
 bulletX = 0
 bulletY = PLAYER_START_Y
 bulletX_change = 0

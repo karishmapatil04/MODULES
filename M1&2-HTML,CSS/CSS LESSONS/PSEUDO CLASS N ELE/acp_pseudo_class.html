@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Advanced selector, pseudo class and elements</title>
+    <style>
+        /*PSEUDO CLASSES*/
+        /*hover*/
+        a:hover{
+            color:rgb(226, 43, 43);
+        }
+        /*nth-child*/
+        li:nth-child(2){
+            background-color: brown;
+        }
+        /*not-selector*/
+        div:not(.c1){
+            font-size:30px;
+        }
+    </style>
+</head>
+
+<body>
+    <ul>
+        <li>Apple</li>
+        <li>Banana</li>
+        <li>Orange</li>
+    </ul>
+
+    <a href="#">click for google</a>
+
+    <div class="c1">first div</div>
+    <div class="c2">Second div</div>
+</body>
+
+</html>

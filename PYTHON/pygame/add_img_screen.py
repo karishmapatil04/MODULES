@@ -14,10 +14,10 @@ background_image = pygame.transform.scale(
     (SCREEN_WIDTH, SCREEN_HEIGHT)
 )
 
-penguin_image = pygame.transform.scale(
+object_image = pygame.transform.scale(
     pygame.image.load(r'C:\Users\samai\OneDrive\Documents\Codingal_Learn\webdev course\MODULES\PYTHON\pygame\flower.jpg').convert_alpha(), (200, 200)
 )
-penguin_rect = penguin_image.get_rect(
+object_rect = object_image.get_rect(
     center=(SCREEN_WIDTH // 2, SCREEN_HEIGHT // 2 - 30)
 )
 
@@ -38,7 +38,7 @@ def game_loop():
                 running = False
 
         display_surface.blit(background_image, (0, 0))
-        display_surface.blit(penguin_image, penguin_rect)
+        display_surface.blit(object_image, object_rect)
         display_surface.blit(text, text_rect)
 
         pygame.display.flip()
