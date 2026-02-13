@@ -10,7 +10,7 @@ GREEN = (0, 255, 0)
 # Draw solid circle
 pygame.draw.circle(window, GREEN, (300, 300), 50)
 # Draw outlined circle
-pygame.draw.circle(window, GREEN, (0, 0), 50, 3)
+pygame.draw.circle(window, GREEN, (100, 100), 50, 3)
 # Draws the surface object to the screen.
 pygame.display.update()
 # Game loop

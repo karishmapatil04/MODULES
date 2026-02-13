@@ -45,7 +45,7 @@ def main():
         else:
             current_color = colors['white']
 
-        screen.fill((0, 0, 0))
+        screen.fill((0, 255, 0))
         pygame.draw.rect(screen, current_color,
                          (x, y, sprite_width, sprite_height))
         pygame.display.flip()

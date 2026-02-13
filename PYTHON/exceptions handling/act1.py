@@ -4,5 +4,3 @@ try :
 except ValueError as ex:
   print("Exception: ",ex)
 
-
-print("I am outside the try block")

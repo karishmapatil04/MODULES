@@ -77,7 +77,7 @@ sp1.rect.y = random.randint(0, 370)
 # Add the sprite to the group
 all_sprites_list.add(sp1)
 
-# Create the game window
+# Create the game window 
 screen = pygame.display.set_mode((500, 400))
 # Set the window title
 pygame.display.set_caption("Boundary Sprite")

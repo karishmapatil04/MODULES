@@ -1,6 +1,6 @@
 try:
-  num1 = int(input("Enter a number: "))
-  num2 = int(input("Enter a number: "))
+  num1 = int(input("Enter first number: "))
+  num2 = int(input("Enter second number: "))
   result = num1/num2
   print("Result is : ", result)
 
@@ -10,8 +10,8 @@ except ValueError:
   print("Please enter numerical value")
 except NameError as ex:
   print("The exception is ",ex)
-  
 except:
   print("Some error occurred")
+
 finally:
   print("I will execute no matter what happens")

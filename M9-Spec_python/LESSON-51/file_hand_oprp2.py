@@ -5,8 +5,8 @@ new_file.close()
 #check if a file exists 
 import os
 print("Checking if my_file exists or not....")
-if os.path.exists("my_file.txt"):
-  os.remove("my_file.txt")
+if os.path.exists("C:\\Users\\samai\\OneDrive\\Documents\\Codingal_Learn\\webdev course\\MODULES\\M9-Spec_python\\LESSON-51\\my_file.txt"):
+  os.remove("C:\\Users\\samai\\OneDrive\\Documents\\Codingal_Learn\\webdev course\\MODULES\\M9-Spec_python\\LESSON-51\\my_file.txt")
 else:
   print("The file does not exist")
 
@@ -16,8 +16,8 @@ my_file.write("Hi! I am Penguin and I am 1 yr old.")
 my_file.close()
 
 #delete file named codingal
-os.remove('Codingal.txt')
+os.remove('C:\\Users\\samai\\OneDrive\\Documents\\Codingal_Learn\\webdev course\\MODULES\\M9-Spec_python\\LESSON-51\\Codingal.txt')
 
 #delete the folder
-#os.rmdir('Folder')
+os.rmdir('C:\\Users\\samai\\OneDrive\\Documents\\Codingal_Learn\\webdev course\\MODULES\\M9-Spec_python\\LESSON-51\\random')
 

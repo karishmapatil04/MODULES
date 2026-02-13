@@ -1,2 +1,4 @@
- File in write mode ....Hi! I am Penguin. I am 1 yr. old 
- File in append mode ....Hi! I am Penguin. I am 1 yr. old
+hi coding
+we are happy
+how are you
+hope your days gets better
