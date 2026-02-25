@@ -13,4 +13,4 @@ while playing:
     break 
     
   else:
-    print("Your guess isn't quite right, try again. \n")
+    print("Your guess isn't quite right, \ntry again. \n")

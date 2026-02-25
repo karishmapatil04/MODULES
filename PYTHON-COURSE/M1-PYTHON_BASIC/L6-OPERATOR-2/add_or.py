@@ -8,7 +8,6 @@ else:
     print("Atleast one number has boolean value as False")
 
 
-
 a = 10
 b = -10
 c = 0

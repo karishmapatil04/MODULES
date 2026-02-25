@@ -9,31 +9,24 @@ root.configure(bg='light blue')
 root.geometry('650x400')
 
 # Adding Image and Labels in the Main Window
-upload = Image.open(r"C:\Users\samai\OneDrive\Documents\Codingal_Learn\webdev course\MODULES\MODULES9\LESSON-54\app_img.jpg")
+upload = Image.open(r"C:\Users\samai\OneDrive\Documents\Codingal_Learn\webdev course\MODULES\M9-Spec_python\LESSON-54\app_img.jpg")
 # Resize the image using resize() method
 upload = upload.resize((300, 300))
 image = ImageTk.PhotoImage(upload)
 label = Label(root, image=image, bg='light blue')
 label.place(x=180, y=20)
 
-label1 = Label(root,
-               text="Hey User! Welcome to Denomination Counter Application.",
-               bg='light blue')
+label1 = Label(root,text="Hey User! Welcome to Denomination Counter Application.",bg='light blue')
 label1.place(relx=0.5, y=340, anchor=CENTER)
 
 # Function to display a messagebox and proceed if OK is clicked
 def msg():
-    MsgBox = messagebox.showinfo(
-        "Alert", "Do you want to calculate the denomination count?")
+    MsgBox = messagebox.showinfo("Alert", "Do you want to calculate the denomination count?")
     if MsgBox == 'ok':
         topwin()
 
 # Adding Buttons to the main window
-button1 = Button(root,
-                 text="Let's get started!",
-                 command=msg,
-                 bg='brown',
-                 fg='white')
+button1 = Button(root,text="Let's get started!",command=msg,bg='brown',fg='white')
 button1.place(x=260, y=360)
 
 # Function for opening new/top window

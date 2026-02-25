@@ -10,7 +10,7 @@ FONT_SIZE = 72
 pygame.init()
 
 # Load and transform the background image
-background_image = pygame.transform.scale(pygame.image.load(r"C:\Users\samai\OneDrive\Documents\Codingal_Learn\webdev course\MODULES\PYTHON\sprite collision\mountains.jpg"),(SCREEN_WIDTH, SCREEN_HEIGHT))
+background_image = pygame.transform.scale(pygame.image.load(r"C:\Users\samai\OneDrive\Documents\Codingal_Learn\webdev course\MODULES\PYTHON\sprite collision\space.png"),(SCREEN_WIDTH, SCREEN_HEIGHT))
 
 # Load font once at the beginning
 font = pygame.font.SysFont("Times New Roman", FONT_SIZE)
@@ -39,7 +39,7 @@ pygame.display.set_caption("Sprite Collision")
 all_sprites = pygame.sprite.Group()
 
 # Create sprites
-sprite1 = Sprite(pygame.Color('black'), 20, 30)
+sprite1 = Sprite(pygame.Color('green'), 20, 30)
 sprite1.rect.x, sprite1.rect.y = random.randint(
     0, SCREEN_WIDTH - sprite1.rect.width), random.randint(
         0, SCREEN_HEIGHT - sprite1.rect.height)
@@ -78,7 +78,7 @@ while running:
 
     # Display win message
     if won:
-        win_text = font.render("You win!", True, pygame.Color('black'))
+        win_text = font.render("You win!", True, pygame.Color('white'))
         screen.blit(win_text, ((SCREEN_WIDTH - win_text.get_width()) // 2,
                                (SCREEN_HEIGHT - win_text.get_height()) // 2))
 
