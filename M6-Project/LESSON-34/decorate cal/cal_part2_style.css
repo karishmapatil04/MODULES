@@ -6,19 +6,23 @@ body {
 #container {
     width: 1000px;
     height: 550px;
-    /*background-image: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), url(download-2.jpg);*/
+    background-image: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), url(bgImg.jpg);
     margin: 20px auto;
 }
 
 #calculator {
     width: 320px;
     height: 520px;
-    background-color: hsl(204, 14%, 93%);
+    background-color: #eaedef;
     margin: 0 auto;
     top: 20px;
     position: relative;
     border-radius: 5px;
-    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    box-shadow: 4px 8px 0 rgba(0, 0, 0, 0.2), 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+#result {
+    height: 120px;
 }
 
 #keyboard {
@@ -38,23 +42,18 @@ body {
     font-size: 15px;
 }
 
-.number,
-.empty {
+.number,.empty {
     background-color: #eaedef;
 }
 
-.number,
-.operator {
+.number,.operator {
     cursor: pointer;
 }
 
-.operator:active,
-.number:active {
+.operator.active,.number.active {
     font-size: 13px;
 }
 
-.operator:focus,
-.number:focus,
-.empty:focus {
+.operator:focus,.number:focus,.empty:focus {
     outline: 0;
 }
