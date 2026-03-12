@@ -10,6 +10,7 @@ while temp > 0:
    digit = temp % 10
    sum += digit ** 3
    temp //= 10
+   print(temp)
 
 # display the result
 if num == sum:

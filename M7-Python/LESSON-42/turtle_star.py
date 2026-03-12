@@ -12,6 +12,7 @@ board.forward(100)
 board.left(120)
 board.forward(100)
  
+#moving without any mark
 board.penup()
 board.right(150)
 board.forward(50)

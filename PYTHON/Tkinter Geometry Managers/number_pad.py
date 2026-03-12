@@ -23,7 +23,7 @@ for i in range(4):
 		)
 		frame.grid(row=i, column=j)
 		label = Label(master=frame, text=nums[i][j], bg='#d0efff')
-		label.pack(padx=3, pady=3)
+		label.pack(padx=8, pady=8)
 
 # Start the GUI event loop
 root.mainloop()

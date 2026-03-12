@@ -4,7 +4,6 @@ print("Original List :", L)
 # variable to store the sum of 
 # the list
 count = 0
-  
 # Finding the sum
 for i in L:
     count += i
@@ -18,7 +17,7 @@ print("average = ", avg)
 
 # Sorting the elements of the list
 L.sort()
- 
+print(L) 
 # printing the first element
 print("Smallest element is:", L[0])
 

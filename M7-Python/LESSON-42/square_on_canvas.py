@@ -12,9 +12,9 @@ turtle.title("Welcome to Turtle Window")
 board = turtle.Turtle()
 
 # creating a square
-for i in range(4):
+for i in range(6):
 	board.forward(100)
-	board.left(90)
+	board.left(60)
 	i = i+1
 
 turtle.done()
