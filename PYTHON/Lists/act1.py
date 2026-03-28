@@ -2,8 +2,8 @@
 empty_list = []
 print(empty_list)
 
-# A list of numbers
-numbers = ['a', 2, 'hello', 4, 5]
+# A list of different data types
+numbers = ['a', 2, 'hello', 4.7, 5]
 print(numbers)
 
 # Use * operator

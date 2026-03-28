@@ -7,6 +7,7 @@ print(f"{Fore.CYAN}👋🎉 Welcome to Sentiment Spy! 🕵️{Style.RESET_ALL}")
 user_name = input(f"{Fore.MAGENTA}Please enter your name: {Style.RESET_ALL} ").strip()
 if not user_name:
     user_name = "Mystery Agent"  # Fallback if user doesn’t provide a name
+    
 conversation_history = []
 print(f"\n{Fore.CYAN}Hello, Agent {user_name}!")
 print(f"Type a Sentence and I will analyze your sentences with TextBlob and show you the sentiment. 🔍")

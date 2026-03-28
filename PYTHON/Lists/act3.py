@@ -3,16 +3,16 @@ print("Original List :", L)
   
 # variable to store the sum of 
 # the list
-count = 0
+sum = 0
 # Finding the sum
 for i in L:
-    count += i
+    sum += i
       
 # divide the total elements by
 # number of elements
-avg = count/len(L)
+avg = sum/len(L)
   
-print("sum = ", count)
+print("sum = ", sum)
 print("average = ", avg)
 
 # Sorting the elements of the list

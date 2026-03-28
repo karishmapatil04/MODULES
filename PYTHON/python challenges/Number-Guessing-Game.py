@@ -10,7 +10,7 @@ def intro():
 	# declaring name variable global so it can be accessed outside the function
 	global name
 	name = input() #asks for the name
-	print(name + ", we are going to play a game. I am thinking of a number between 1 and 100")
+	print(name + ", we are going to play a game. I am thinking of a number between 1 and 10")
 	if(number%2==0):
 		x='even'
 	else:

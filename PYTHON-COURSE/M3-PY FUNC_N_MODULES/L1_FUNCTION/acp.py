@@ -10,7 +10,7 @@ def calculate_circumference(radius):
     Returns:
         float: The circumference of the circle
     """
-    return 2 * math.pi * radius
+    return 2 * 3.14 * radius
 
 
 # Example usage

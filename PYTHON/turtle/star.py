@@ -11,7 +11,8 @@ board.forward(100)
  
 board.left(120)
 board.forward(100)
- 
+
+#This lines is for moving to draw second triangle 
 board.penup()
 board.right(150)
 board.forward(50)
