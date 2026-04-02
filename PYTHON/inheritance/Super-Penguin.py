@@ -15,10 +15,10 @@ class Penguin(Bird):
 
     def __init__(self):
         # call super() function
-        super().__init__()
         print("Penguin is ready")
 
     def whoisThis(self):
+        super().__init__()
         print("Penguin")
 
     def run(self):

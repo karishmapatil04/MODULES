@@ -95,6 +95,8 @@ def chat():
         else:
             print(Fore.RED + "TravelBot: Could you rephrase?")
 
+
+
 # Run the chatbot
 if __name__ == "__main__":
     chat()
