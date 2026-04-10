@@ -4,7 +4,6 @@ class myClass:
 	# private variable
 	__privateVar = 27
 	
-
 	# private method
 	def __privMeth(self):
 		print("I'm inside class myClass")

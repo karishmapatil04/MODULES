@@ -4,7 +4,6 @@ from sklearn.metrics.pairwise import cosine_similarity
 from textblob import TextBlob
 from colorama import init, Fore
 import time
-import sys
 
 # Initialize colorama
 init(autoreset=True)
