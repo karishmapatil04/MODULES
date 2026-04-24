@@ -9,5 +9,5 @@ class Point:
         return "({0}, {1})".format(self.x, self.y)
 
 # Create Object
-p1 = Point(2, 3)
+p1 = Point(20, 35)
 print(p1)
