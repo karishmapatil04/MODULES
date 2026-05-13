@@ -8,20 +8,20 @@ lst.append('Papaya')
 print("Updated List :", lst)
 
 lst.remove('Guava')
-print("Updated List :", lst)
+print("Remove element List :", lst)
 
 lst.sort()
 print("Sorted List:", lst)
 
 lst.pop(1)
-print("Updated List :", lst)
+print("Updated pop List :", lst)
 
 lst.reverse()
 print("Reversed List :", lst)
 
 print("Multiplication on List :", lst*2)
 
-lst = lst[:4]
+lst = lst[:2]
 print("Sliced List :", lst)
 
 lst.clear()

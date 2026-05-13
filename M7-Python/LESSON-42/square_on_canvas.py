@@ -4,7 +4,7 @@ import turtle
 turtle.Screen().bgcolor("Yellow")
 
 sc = turtle.Screen()
-sc.setup(400, 300)
+sc.setup(700, 700)
 
 turtle.title("Welcome to Turtle Window")
 
@@ -12,10 +12,9 @@ turtle.title("Welcome to Turtle Window")
 board = turtle.Turtle()
 
 # creating a square
-for i in range(6):
+for i in range(4):
 	board.forward(100)
-	board.left(60)
-	i = i+1
+	board.left(90)
 
 turtle.done()
 
