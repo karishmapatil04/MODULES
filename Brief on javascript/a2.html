@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Emoji Time Greeter</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: #f0f0ff;
+      text-align: center;
+      padding: 30px;
+    }
+    h1 { color: #764ba2; }
+    button {
+      background: #764ba2;
+      color: white;
+      border: none;
+      padding: 12px 28px;
+      border-radius: 25px;
+      font-size: 15px;
+      font-weight: bold;
+      cursor: pointer;
+      margin: 8px;
+    }
+    button:hover { background: #5a3680; }
+    .box {
+      background: white;
+      border: 3px solid #764ba2;
+      border-radius: 20px;
+      padding: 25px;
+      width: 300px;
+      margin: 15px auto;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    }
+    .box h2     { color: #764ba2; margin-bottom: 12px; }
+    .emoji-big  { font-size: 64px; margin: 10px 0; }
+    .greet-text { font-size: 18px; font-weight: bold; color: #333; }
+    .time-text  { font-size: 13px; color: #999; margin-top: 6px; }
+    #starsOut   { font-size: 24px; display: flex; flex-wrap: wrap; justify-content: center; gap: 4px; margin: 10px 0; }
+    .count-text { font-size: 13px; color: #999; margin-top: 4px; }
+  </style>
+</head>
+<body>
+
+  <h1>⏰ Emoji Time Greeter</h1>
+  <p>What time is it? Let JavaScript find out!</p>
+
+  <button onclick="showGreeting()">🕐 What's the Time?</button>
+  <button onclick="printStars()">⭐ Print Stars!</button>
+
+  <div class="box" id="greetBox" style="display:none">
+    <h2>🌍 Your Greeting</h2>
+    <div class="emoji-big"  id="emojiOut"></div>
+    <div class="greet-text" id="greetOut"></div>
+    <div class="time-text"  id="timeOut"></div>
+  </div>
+
+  <div class="box" id="starTrailBox" style="display:none">
+    <h2>⭐ Star Trail</h2>
+    <div id="starsOut"></div>
+    <div class="count-text" id="countOut"></div>
+  </div>
+
+  <script>
+
+
+    function showGreeting() {
+      let currentHour = new Date().getHours();
+
+      let emoji;
+      let message;
+
+      if (currentHour < 6) {
+        emoji   = "🌙";
+        message = "Write your own night message!";
+      } else if (currentHour < 12) {
+        emoji   = "🌅";
+        message = "Write your own morning message!";
+      } else if (currentHour < 17) {
+        emoji   = "☀️";
+        message = "Write your own afternoon message!";
+      } else if (currentHour < 20) {
+        emoji   = "🌇";
+        message = "Write your own evening message!";
+      } else {
+        emoji   = "🌙";
+        message = "Write your own night message!";
+      }
+
+      document.getElementById("emojiOut").innerHTML = emoji;
+      document.getElementById("greetOut").innerHTML = message;
+      document.getElementById("timeOut").innerHTML  = "Current Hour: " + currentHour;
+      document.getElementById("greetBox").style.display = "block";
+    }
+function printStars() {
+  /*
+  1) Create the `printStars()` function.
+     a) Start with an empty `stars` variable.
+     b) Start the counter from 0.
+  */
+
+  /*
+  2) Use a `while` loop.
+     a) Keep repeating the loop while the count is less than 10.
+     b) Add one star during each loop.
+  */
+
+  stars = stars + "⭐";
+
+  /*
+     c) Increase the count by 1 after adding each star.
+
+  3) Display the star result on the webpage.
+     a) Show the final star trail inside the `starsOut` element.
+     b) Show the total number of stars inside the `countOut` element.
+     c) Make the star trail box visible.
+  */
+}
+
+  </script>
+
+</body>
+</html>

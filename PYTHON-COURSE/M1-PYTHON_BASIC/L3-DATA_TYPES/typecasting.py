@@ -2,7 +2,7 @@
 name = "Penguin"
 age = 15
 is_student = True
-weight = 38.5
+weight = 38.9
 
 # Printing Different Variables and their Data Type
 print("Name :", name)

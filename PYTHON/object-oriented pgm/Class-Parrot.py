@@ -15,7 +15,6 @@ woo = Parrot("Woo", 15)
 # access the class attributes
 print("Blu is a ",blu.species)
 print("Woo is also a {}, and it is beautiful".format(woo.species))
-
 # access the instance attributes
 print("{} is {} years old".format( blu.name, blu.age))
 print("{} is {} years old".format( woo.name, woo.age))
