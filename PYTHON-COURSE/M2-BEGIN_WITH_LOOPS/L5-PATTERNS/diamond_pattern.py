@@ -25,7 +25,7 @@ for i in range(1, halfDiamRow): #loop for rows
     print(end=" ")
   space = space+1
   num = 1
-  for j in __range(1, 2*(halfDiamRow-i)):
+  for j in range(1, 2*(halfDiamRow-i)):
     print(end=str(num)) #display result
   #incerementing number at each column
     num = num+1

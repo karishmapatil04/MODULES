@@ -4,7 +4,6 @@ units = int(input(" Please enter Number of Units you Consumed : "))
 # Check conditions of units consumed 
 # Then calculate amount and surcharge accordingly
 # surcharge is the tax value
-
 # Check for units less than 50
 if(units < 50):
     amount = units * 2.60 

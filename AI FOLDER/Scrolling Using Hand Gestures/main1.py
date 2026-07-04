@@ -14,34 +14,33 @@ def detect_gesture(landmarks, handedness):
     fingers = []
     tips = [mp_hands.HandLandmark.INDEX_FINGER_TIP, mp_hands.HandLandmark.MIDDLE_FINGER_TIP,
             mp_hands.HandLandmark.RING_FINGER_TIP, mp_hands.HandLandmark.PINKY_TIP]
-
+   
     # Check fingers (except thumb)
     for tip in tips:
         if landmarks.landmark[tip].y < landmarks.landmark[tip - 2].y:
             fingers.append(1)
-
     # Check thumb
     thumb_tip = landmarks.landmark[mp_hands.HandLandmark.THUMB_TIP]
     thumb_ip = landmarks.landmark[mp_hands.HandLandmark.THUMB_IP]
     if (handedness == "Right" and thumb_tip.x > thumb_ip.x) or (handedness == "Left" and thumb_tip.x < thumb_ip.x):
         fingers.append(1)
-
+   
     return "scroll_up" if sum(fingers) == 5 else "scroll_down" if len(fingers) == 0 else "none"
 
 cap = cv2.VideoCapture(0)
 cap.set(3, CAM_WIDTH)
 cap.set(4, CAM_HEIGHT)
 last_scroll = p_time = 0
-
 print("Gesture Scroll Control Active\nOpen palm: Scroll Up\nFist: Scroll Down\nPress 'q' to exit")
 
 while cap.isOpened():
     success, img = cap.read()
     if not success: break
+
     img = cv2.flip(cv2.cvtColor(img, cv2.COLOR_BGR2RGB), 1)
     results = hands.process(img)
     gesture, handedness = "none", "Unknown"
-
+   
     if results.multi_hand_landmarks:
         for hand, handedness_info in zip(results.multi_hand_landmarks, results.multi_handedness):
             handedness = handedness_info.classification[0].label
@@ -62,3 +61,4 @@ while cap.isOpened():
 
 cap.release()
 cv2.destroyAllWindows()
+

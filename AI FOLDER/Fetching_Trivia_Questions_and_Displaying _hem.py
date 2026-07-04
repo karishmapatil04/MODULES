@@ -1,12 +1,13 @@
 import requests
 # Trivia API endpoint
-url = "https://opentdb.com/api.php?amount=5&type=multiple"  # Fetch 5 questions
+url = "https://opentdb.com/api.php?amount=5&type=multiple&difficulty=easy"  # Fetch 5 questions
 # Send GET request to fetch trivia questions
 response = requests.get(url)
 # Check if the request was successful
 if response.status_code == 200:
     trivia_data = response.json()
     score = 0
+    #print(trivia_data)
     # Loop through each trivia question
     for i, question_data in enumerate(trivia_data["results"]):
         print(f"Question {i + 1}: {question_data['question']}")

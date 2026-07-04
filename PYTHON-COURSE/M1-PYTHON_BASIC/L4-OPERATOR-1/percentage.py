@@ -11,5 +11,4 @@ print("sum of math,english,science and hindi:",sum)
 
 perc = (sum/400)*100
 
-print(end="Percentage Mark = ")
-print(perc)
+print("Percentage Mark = ",perc)

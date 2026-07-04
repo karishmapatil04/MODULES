@@ -1,5 +1,4 @@
 import cv2
-import numpy as np
 
 def display_image(title, image):
     """Utility function to display an image."""
@@ -77,9 +76,9 @@ def interactive_color_filter(image_path):
             print("Invalid choice. Please select a valid option.")
 
         display_image("Filtered Image", filtered_image)
-        save_choice = input("Do you want to save this image? (yes/no): ")
+        """save_choice = input("Do you want to save this image? (yes/no): ")
         if save_choice.lower() == "yes":
-            save_image(filtered_image)
+            save_image(filtered_image)"""
 
 # Provide the path to an image for the activity
 interactive_color_filter('C:\\Users\\samai\\OneDrive\\Documents\\Codingal_Learn\\webdev course\\MODULES\\AI FOLDER\\images\\example.jpg')

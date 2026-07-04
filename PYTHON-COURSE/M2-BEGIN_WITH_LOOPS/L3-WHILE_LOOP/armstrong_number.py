@@ -1,5 +1,5 @@
 # take input from the user
-num = int(input("Enter a number: "))
+num = int(input("Enter a three digits number: "))
 
 # initialize sum
 sum = 0
@@ -10,7 +10,6 @@ while temp > 0:
    digit = temp % 10
    sum += digit ** 3
    temp //= 10
-   print(temp)
 
 # display the result
 if num == sum:
