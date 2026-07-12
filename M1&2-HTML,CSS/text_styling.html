@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Text styling properties</title>
+        <style>
+            p {
+            font-family: Arial, sans-serif;
+            font-size: 60px;
+            font-weight: bold;
+            color: rgb(255, 25, 0);
+            font-style: italic;
+            }
+            
+            .label {
+            text-decoration: underline;
+            }
+            .weakness {
+            text-decoration: line-through;
+            }
+
+            .label {
+            text-transform: uppercase;
+            }
+            .tagline {
+            text-transform: capitalize;
+            }
+
+            .badge {
+            transform: rotate(80deg);
+            }
+            /* Try this too: */
+            /* transform: scale(2); */
+
+            .hero-name {
+            text-shadow: 39px 366px orange;
+            }
+            /* Bigger numbers = bigger shadow */
+            /* text-shadow: 8px 8px red; */
+        </style>
+    </head>
+    <body>
+        <!--Text styling properties-->
+        <h1  class="label">This is my label paragraph</h1>
+        <p class="weakness">This is my weakness paragraph</p>
+        <p class="tagline">this is my tagline paragraph</p>
+        <p>This is my paragraph</p>
+        <p class="badge">This is my badge paragraph</p>
+
+        <h2 class="hero-name">Heading 2 class hero-name</h2>
+    </body>
+</html>

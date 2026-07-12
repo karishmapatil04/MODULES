@@ -32,8 +32,8 @@ div:not(.c1){
 
 /*PSEUDO ELEMENTS*/
 a::after{
-    content:"*";
-    COLOR:rgb(0, 255, 106);
+    content:"%";
+    COLOR:rgb(255, 98, 0);
 }
 a::before{
     content:"&";

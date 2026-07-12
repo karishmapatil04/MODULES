@@ -6,7 +6,7 @@ window = Tk()
 
 # Set the window Title and Geometry
 window.title('Demo Window')
-window.geometry('400x300')
+window.geometry('400x600')
 
 # Start the GUI event loop
 window.mainloop()

@@ -23,9 +23,7 @@ def apply_filter(frame, ftype):
     if ftype == 'GRAYSCALE':
         return cv2.cvtColor(frame, cv2.COLOR_BGR2GRAY)
     elif ftype == 'SEPIA':
-        sepia_filter = np.array([[0.272, 0.534, 0.131],
-                                 [0.349, 0.686, 0.168],
-                                 [0.393, 0.769, 0.189]])
+        sepia_filter = np.array([[0.272, 0.534, 0.131],[0.349, 0.686, 0.168],[0.393, 0.769, 0.189]])
         return np.clip(cv2.transform(frame, sepia_filter), 0, 255).astype(np.uint8)
     elif ftype == 'NEGATIVE':
         return cv2.bitwise_not(frame)
