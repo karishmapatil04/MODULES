@@ -10,5 +10,4 @@ def by_three(number):
     return False
   
 #display result
-print(by_three(9))
-print(by_three(4))
+print(by_three(7))
