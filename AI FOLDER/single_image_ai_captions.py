@@ -2,7 +2,7 @@ import base64, requests
 #from config import HF_API_KEY
 
 API_URL = "https://router.huggingface.co/v1/chat/completions"
-HEADERS = {"Authorization": f"Bearer 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", "Content-Type": "application/json"}
+HEADERS = {"Authorization": f"Bearer {HF_API_KEY}", "Content-Type": "application/json"}
 MODELS = [
     "zai-org/GLM-4.5V",
     "Qwen/Qwen2.5-VL-72B-Instruct",
