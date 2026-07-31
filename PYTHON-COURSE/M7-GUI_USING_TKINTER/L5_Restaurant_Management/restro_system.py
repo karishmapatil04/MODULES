@@ -100,7 +100,7 @@ class RestaurantOrderManagement:
         canvas = tk.Canvas(root, width=bg_width, height=bg_height)
         canvas.pack()
 
-        original_image = tk.PhotoImage(file="background.png")
+        original_image = tk.PhotoImage(file=r"C:\Users\samai\OneDrive\Documents\Codingal_Learn\webdev course\MODULES\PYTHON-COURSE\M7-GUI_USING_TKINTER\L5_Restaurant_Management\download.png")
         background_image = original_image.subsample(
             original_image.width() // bg_width,
             original_image.height() // bg_height

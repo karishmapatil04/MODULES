@@ -1,4 +1,4 @@
-/*ADVANCE SELECTOR*/
+/***ADVANCE SELECTOR****/
 
 /*Attribute selector - this is comments*/
 input[type="text"]{
@@ -16,13 +16,13 @@ h1+p+p{
     background-color: green;
 }
 
-/*PSEUDO CLASSES*/
+/****PSEUDO CLASSES*****/
 /*hover*/
 a:hover{
     color:rgb(226, 43, 43);
 }
 /*nth-child*/
-li:nth-child(2){
+li:nth-child(3){
     background-color: brown;
 }
 /*not-selector*/
@@ -30,13 +30,13 @@ div:not(.c1){
     font-size:30px;
 }
 
-/*PSEUDO ELEMENTS*/
+/****PSEUDO ELEMENTS***/
 a::after{
-    content:"%";
+    content:"%%";
     COLOR:rgb(255, 98, 0);
 }
 a::before{
-    content:"&";
+    content:"+";
     color:rgb(238, 71, 224);
 }
 div::first-letter{
