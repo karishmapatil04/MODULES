@@ -18,8 +18,7 @@ while chore_num <= total_chores:
     elif chore_num == 3: next_chore = "Take out the trash"
     else: next_chore = "Wash the dishes"
 
-    answer = input(f"Have you finished: {next_chore}? (yes/no): ")
-
+    answer = input(f"Have you finished: {next_chore}? (yes/no): ").strip()
     # PART 5: Only move on to the next chore once it is marked done
     if answer == "yes":
         completed_count += 1
@@ -36,16 +35,6 @@ while chore_num <= total_chores:
 print("===== ALL CHORES COMPLETE! =====")
 print("Great work finishing your entire checklist today!\n")
 
-# PART 8: A safe look at what an infinite loop would look like
-print("Now let's safely peek at an infinite loop...")
-test_value = 0
-safety_counter = 0
-while test_value <= 0:
-    print("This condition never changes, so this would run forever!")
-    safety_counter += 1
-    if safety_counter == 3:
-        print("(Stopping here on purpose - a real infinite loop never stops on its own!)")
-        break
 
 # PART 9: Print the final chore checklist summary
 print("\n===== CHORE CHECKLIST SUMMARY =====")
