@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Example of Pseudo Class</title>
+        <style>
+            /*hover pseudo class*/
+            p{
+                background: lightblue;
+            }
+            p:hover {
+            background: orange;
+            color: white;
+            }
+
+            /*child selector*/
+            ul > li {
+            font-weight: bold;
+            color: brown;
+            }
+
+            /*sibling selector*/
+            h1 + p +p{
+            background: gray;
+            padding: 100px  200px 50px 2px;
+            border-radius: 8px;
+            }
+
+            /*nth-child pseudo class*/
+            ul li:nth-child(3) {
+            background: yellow;
+            color: orangered;
+            }
+
+            /*first-letter pseudo class*/
+            p::first-letter {
+                font-size: 80px;
+                color: lightgreen;
+                font-weight: bold;
+            }
+        </style>
+    </head>
+    <body>
+        <h1>Example of Pseudo Class</h1>
+        <p>Hover over this paragraph to see the effect:</p>
+        <p>This is a paragraph demonstrating the use of pseudo classes in CSS. </p>
+
+        <ul>
+            <li>Item 1</li>
+            <li>Item 2</li>
+            <li>Item 3</li>
+        </ul>
+    </body>
+</html>

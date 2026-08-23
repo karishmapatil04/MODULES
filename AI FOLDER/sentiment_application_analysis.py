@@ -1,10 +1,9 @@
 import requests, re, random
-from config import HF_API_KEY
 
 #change below model to this if required --> "sentence-transformers/all-mpnet-base-v2"
 MODEL="sentence-transformers/all-MiniLM-L6-v2"
 API=f"https://router.huggingface.co/hf-inference/models/{MODEL}"
-HEAD={"Authorization":f"Bearer {HF_API_KEY}"}
+HEAD={"Authorization":f"Bearer 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"}
 TH=0.72
 DEMOS=[("how to delete my account","how do i remove my account"),
        ("start the game","begin the game"),

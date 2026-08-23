@@ -11,3 +11,4 @@ def by_three(number):
   
 #display result
 print(by_three(7))
+print(by_three(36))

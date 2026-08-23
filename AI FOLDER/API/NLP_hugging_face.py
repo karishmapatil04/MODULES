@@ -1,9 +1,8 @@
 import requests
-from config import HF_API_KEY
 
 MODEL_ID = "facebook/bart-large-mnli"
 API_URL = f"https://router.huggingface.co/hf-inference/models/{MODEL_ID}"
-HEADERS = {"Authorization": f"Bearer {HF_API_KEY}"}
+HEADERS = {"Authorization": f"Bearer "}
 TOPICS = ["Sports", "Technology", "Business", "Politics", "Health"]
 
 def ask_hf(headline: str):
@@ -22,7 +21,7 @@ def best_topic(preds: list):
 def bar(score: float) -> str:
     pct = score * 100
     blocks = int(pct // 10)
-    return "█" * blocks + "░" * (10 - blocks)
+    return "||" * blocks + "!!" * (10 - blocks)
 
 
 def show(headline: str, preds: list):

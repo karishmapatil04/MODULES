@@ -6,7 +6,7 @@ from PIL import Image
 def get_caption(image_path):
     url = "https://router.huggingface.co/models/nlpconnect/vit-gpt2-image-captioning"
     headers = {
-        "Authorization": f"Bearer {HF_API_KEY}"
+        "Authorization": f"Bearer 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"
     }
 
     # Load image

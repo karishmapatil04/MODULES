@@ -1,17 +1,19 @@
 <!DOCTYPE html>
 <html>
 
+<head>
+</head>
+
 <body>
-    <p>Setting a default value to a function parameter.</p>
-    <p id="demo"></p>
+    <button onclick="myfunction(5)">Execute JS function</button>
+
     <script>
-        function myFunction(x, y) {
+        function myfunction(x, y) {
             if (y === undefined) {
                 y = 2;
             }
-            return x * y;
+            document.write(x * y);
         }
-        document.getElementById("demo").innerHTML = myFunction(5);
     </script>
 </body>
 

@@ -1,7 +1,7 @@
 try:
     num1, num2 = eval(input("Enter two numbers, separated by a comma : "))
     result = num1 / num2
-    print("Result is", result)
+    print("Result is", round(result, 2))
 #using multiple except block for different type of error
 
 except ZeroDivisionError:

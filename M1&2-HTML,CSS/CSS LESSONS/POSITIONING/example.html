@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Positioning</title>
+        <style>
+            /* Move an element using position + an offset */
+            .top-bar {
+                position: fixed;
+                top: 0;
+            }
+            .special-note {
+                position: relative;
+                left: 200px;
+                background-color: gold;
+                padding: 10px 20px;
+            }
+            /* Parent must have position: relative */
+        .pet-card {
+        position: relative;
+        background-color: lightblue;
+        }
+        /* Badge pins to the corner of the card */
+        .badge {
+            background-color: red;
+        position: absolute;
+        top: 8px;
+        right: 8px;
+        }
+
+        .section-label {
+        position: sticky;
+        top: 100px;
+        background-color: darkorange;
+        color: white;
+        padding: 10px 20px;
+        }
+        </style>
+    </head>
+    <body>
+        <div class="top-bar">
+            <h1>Positioning</h1>
+        </div>
+        <p class="special-note">This is a special note that has been moved 30px to the right.</p>
+        <p class="pet-card">
+            <span class="badge">New!</span>
+        </p>
+        <p class="section-label">This is a section label that will stick to the top of the page when you scroll down.</p>
+
+        <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+        <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+        <p>Notice that the top bar is fixed to the top of the page, while the special note has been moved to the right using relative positioning.</p>
+    </body>
+</html>

@@ -13,7 +13,7 @@ root.geometry("650x400")
 # -------------------------------
 # Adding Image and Labels in Main Window
 # -------------------------------
-upload = Image.open("app_img.jpg")
+upload = Image.open(r"C:\Users\samai\OneDrive\Documents\Codingal_Learn\webdev course\MODULES\PYTHON-COURSE\M7-GUI_USING_TKINTER\L5_Denomination_Calculator\flower.jpg")
 upload = upload.resize((300, 300))
 image = ImageTk.PhotoImage(upload)
 
