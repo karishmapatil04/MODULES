@@ -1,4 +1,7 @@
-try:
-    number = int(input("Enter a number: "))
-except Exception as e:
-    print(f"error: {e}")
+valid = False
+while not valid:
+    try:
+        n = int(input("Enter a number: "))
+        valid = True
+    except ValueError:
+        print("Invalid")

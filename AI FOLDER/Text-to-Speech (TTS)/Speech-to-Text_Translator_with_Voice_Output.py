@@ -47,8 +47,9 @@ def display_language_options():
     print("6. Gujarati (gu)")
     print("7. Malayalam (ml)")
     print("8. Punjabi (pa)")
+    print("9. Spanish (es) - Default")
     # User selects language
-    choice = input("Please select the target language number (1-8): ")
+    choice = input("Please select the target language number (1-9): ")
     language_dict = {
     "1": "hi",
     "2": "ta",
@@ -57,7 +58,8 @@ def display_language_options():
     "5": "mr",
     "6": "gu",
     "7": "ml",
-    "8": "pa"
+    "8": "pa",
+    "9": "es"
     }
     return language_dict.get(choice, "es") # Default to Spanish if invalid input
     # Main function to combine all steps

@@ -2,7 +2,7 @@
 <html>
 
 <head>
-    <title>My Zoo</title>
+    <title>My Zoo page</title>
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -52,6 +52,7 @@
     DOM Tree: zoo is the parent element node.
     Zone divs are child element nodes. Animal names inside each span are text nodes.
   -->
+    <p id="zoo-status"></p>
     <div id="zoo">
         <div class="zone">Zone 1: <span id="zone1"></span></div>
         <div class="zone">Zone 2: <span id="zone2"></span></div>
@@ -60,18 +61,17 @@
     </div>
     <br>
     <button onclick="openZoo()">Open the Zoo!</button>
-    <p id="zoo-status"></p>
 
     <script>
         function openZoo() {
             /* Task 1: Add your first animal to Zone 1 */
-            document.getElementById("zone1").innerHTML = "Lion";
+            document.getElementById("zone1").innerHTML = "Lion, Tiger";
             /* Task 2: Add your second animal to Zone 2 */
             document.getElementById("zone2").innerHTML = "Elephant";
             /* Task 3: Add your third animal to Zone 3 */
             document.getElementById("zone3").innerHTML = "Penguin";
             /* Task 4: Show the total number of animals */
-            document.getElementById("total").innerHTML = "3";
+            document.getElementById("total").innerHTML = "4";
             /* Task 5: Change the zoo background colour */
             document.getElementById("zoo").style.backgroundColor = "lightgreen";
             /* Task6: Use the document object to show the page title */

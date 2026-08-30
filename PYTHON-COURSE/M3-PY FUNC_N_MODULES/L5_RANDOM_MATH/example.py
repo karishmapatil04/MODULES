@@ -1,4 +1,7 @@
 import random
 
-charset=['a', 'b', 'c', 'd', 'e']
+print(random.random())
+print(random.randint(3,16))
+
+charset=["a","e","d"]
 print(random.choice(charset))

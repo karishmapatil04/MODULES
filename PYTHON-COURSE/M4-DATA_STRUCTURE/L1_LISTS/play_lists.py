@@ -18,6 +18,8 @@ print("average = ", avg)
 
 # Sorting the elements of the list
 L.sort()
+
+print(L)
  
 # printing the first element
 print("Smallest element is:", L[0])

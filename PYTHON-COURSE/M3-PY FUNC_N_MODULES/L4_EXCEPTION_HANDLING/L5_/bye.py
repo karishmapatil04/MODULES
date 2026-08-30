@@ -5,7 +5,7 @@ while not valid: #using nested while loop
     #enter a even number
     while n%2==0: 
       print("bye")
-    valid = True
+    valid=True
   except ValueError:
     print("Invalid")
 

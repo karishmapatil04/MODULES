@@ -6,10 +6,8 @@ try:
 
 except ZeroDivisionError:
     print("Division by zero is error !!")
-
 except SyntaxError:
     print("Comma is missing. Enter numbers separated by comma like this 1, 2")
-
 except:
     print("Wrong input")
 
