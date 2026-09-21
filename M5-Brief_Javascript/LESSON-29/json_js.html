@@ -4,11 +4,17 @@
 <body>
     <h2>Convert a JavaScript object into a JSON string, and send it to the server.</h2>
     <p id="result"></p>
+    <p id="status"></p>
     <script>
         var myObj = { name: "Riya", age: 12, grade: 7 };
         var myJSON = JSON.stringify(myObj); // converts object to JSON for sending data
         var newObj = JSON.parse(myJSON); // converts JSON into object while receiving data 
-        document.getElementById("result").innerHTML = "Name:"+ newObj.name +" ,age:"+ newObj.age;
+        document.getElementById("result").innerHTML = "Name: " + newObj.name + ", Age: " + newObj.age + ", Grade: " + newObj.grade;
+
+
+        setTimeout(function () {
+                document.getElementById("status").innerHTML = "Kitchen is preparing...";
+            }, 1000);
     </script>
 </body>
 

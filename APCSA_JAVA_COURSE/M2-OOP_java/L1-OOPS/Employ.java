@@ -19,10 +19,8 @@ class Employ {
     public static void main(String[] args) {
         Employee emp1 = new Employee();
         Employee emp2 = new Employee();
-        Employee emp3 = new Employee();
 
         emp1.displayDetails();
         emp2.displayDetails();
-        emp3.displayDetails();
     }
 }

@@ -18,7 +18,7 @@ lbl3 = Label(frame, text = "Enter Password", bg="#3895D3", fg='white', width=12)
 # Use Entry Widget to create a text box for user to enter details
 name_entry = Entry(frame)
 email_entry = Entry(frame)
-pass_entry = Entry(frame, show="*")
+pass_entry = Entry(frame, show="$")
 
 # Function to display message
 def display():

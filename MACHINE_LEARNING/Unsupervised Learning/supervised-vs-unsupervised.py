@@ -2,18 +2,18 @@ import numpy as np
 import pandas as pd
 import matplotlib.pyplot as plt
 import seaborn as sns
-import os
+
 
 #from google.colab import files
 #file = files.appload()
-df = pd.read_csv('USA_Housing.csv', index_col=0)
+df = pd.read_csv(r'C:\Users\samai\OneDrive\Documents\Codingal_Learn\webdev course\MODULES\MACHINE_LEARNING\Unsupervised Learning\USA_Housing.csv', index_col=0)
 df.head()
 
 df.info()
 
 df.describe()
 
-sns.distplot(df['Price'])
+#sns.distplot(df['Price'])
 
 x=df[['Avg. Area House Age', 'Avg. Area Number of Rooms', 'Avg. Area Number of Bedrooms', 'Area Population']]
 y=df['Price']
@@ -28,7 +28,7 @@ lm.fit(x_train, y_train)
 print(lm.intercept_)
 
 cdf=pd.DataFrame(lm.coef_, x.columns, columns=['Coeff'])
-cdf
+
 
 predictions=lm.predict(x_test)
 
