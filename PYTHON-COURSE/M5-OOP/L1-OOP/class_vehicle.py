@@ -1,9 +1,7 @@
 # create class
 class Vehicle:
-
 	# create init method
     def __init__(self, max_speed, mileage):
-
 		# bind the arguments
         self.max_speed = max_speed
         self.mileage = mileage
