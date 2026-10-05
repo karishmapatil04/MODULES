@@ -1,0 +1,1 @@
+HF_API_KEY=""  # Add your Hugging Face API key here

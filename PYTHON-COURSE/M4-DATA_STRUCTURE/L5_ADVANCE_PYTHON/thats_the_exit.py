@@ -2,7 +2,6 @@
 # exit()
 
 for i in range(10):
-	
 	# If the value of i becomes
 	# 5 then the program is forced
 	# to exit

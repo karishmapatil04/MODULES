@@ -1,0 +1,19 @@
+<!doctype html>
+<html>
+    <head>
+        <title>Example</title>
+    </head>
+    <body>
+        <h1 id="myHeading"></h1>
+        <script>
+            var fruits = ["Elderberry", "Cherry", "Apple", "Banana", "Date"];
+            var plays = [320, 85, 210, 50, 175];
+                var labelled = plays.map(function (count) {
+                    return count + ' plays';
+                });
+                // Result: ['320 plays', '85 plays', '210 plays',
+                //          '50 plays', '175 plays']
+            document.getElementById("myHeading").innerHTML = labelled;
+        </script>
+    </body>
+</html>
