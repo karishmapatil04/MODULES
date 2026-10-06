@@ -5,9 +5,9 @@ class Point:
         self.y = y
 
 	# Method to print points in coordinate format
-    def __str__(self):
+    def __strt__(self):
         return "({0}, {1})".format(self.x, self.y)
 
 # Create Object
-p1 = Point(2, 3)
+p1 = Point(76,4)
 print(p1)
