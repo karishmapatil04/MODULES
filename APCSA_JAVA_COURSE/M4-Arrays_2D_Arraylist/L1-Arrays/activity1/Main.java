@@ -13,10 +13,8 @@ public class Main {
         System.out.println("Enter the " + n + " elements of the array:");
         for (int i = 0; i < n; i++) {
             int val = scn.nextInt();
-            if (val > max)
-                max = val;
-            if (val < min)
-                min = val;
+            if (val > max) max = val;
+            if (val < min) min = val;
         }
 
         int span = max - min;

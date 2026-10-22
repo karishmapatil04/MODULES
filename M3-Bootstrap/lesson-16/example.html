@@ -9,14 +9,38 @@
 </head>
 
 <body>
+    <!-- jumbotron: full-width highlighted banner -->
+    <div class="jumbotron">
+        <div class="container">
+            <h1>My Science Lab</h1>
+            <p class="lead">Welcome to the lab!</p>
+        </div>
+    </div>
+
+    <!-- Four Bootstrap buttons — one for each subject -->
+    <button class="btn btn-primary">Chemistry</button>
+    <button class="btn btn-success">Biology</button>
+    <button class="btn btn-warning">Physics</button>
+    <button class="btn btn-danger">Astronomy</button>
+
+    <!-- Badge attached to a subject name -->
+    <p>
+        Chemistry
+        <span class="badge badge-primary">7 experiments</span>
+    </p>
+    
+    <!-- Badge on a heading showing total count -->
+    <h2>Experiments Completed <span class="badge badge-danger">4</span></h2>
+
     <!-- Progress bar: outer container + inner fill -->
     <div class="progress mb-3">
-        <div class="progress-bar bg-primary" style="width: 50%">progress</div>
+        <div class="progress-bar bg-primary" style="width: 20%">85%</div>
     </div>
     
     <div class="progress mb-3">
         <div class="progress-bar bg-success" style="width: 70%">70%</div>
     </div>
+
 </body>
 
 </html>

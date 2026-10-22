@@ -10,7 +10,6 @@
             text-align: center;
             padding: 30px;
         }
-
         h1 {
             color: #ff5a43;
         }
@@ -37,7 +36,7 @@
 </head>
 
 <body>
-
+    
     <h1>My Delivery Tracker</h1>
     <button onclick="saveOrder()">Save Order</button>
     <button onclick="startDelivery()">Start Delivery</button>
@@ -51,11 +50,7 @@
     <script>
 
         // JSON — the order stored as a JavaScript object
-        let order = {
-            item: "Pizza",
-            price: 5,
-            shop: "My Snack Shop"
-        };
+        let order = {item: "Pizza", price: 5, shop: "My Snack Shop"};
 
         // JSON.stringify() and JSON.parse()
         function saveOrder() {

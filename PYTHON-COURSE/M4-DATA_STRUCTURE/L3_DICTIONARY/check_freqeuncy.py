@@ -5,7 +5,7 @@ test_dict = {'Codingal' : 2, 'is' : 3, 'best' : 2, 'for' : 4, 'Coding' : 1}
 print("The original dictionary : " +  str(test_dict))
   
 # Initialize value 
-K = 5
+K = 4
   
 # Using loop
 # Selective key values in dictionary

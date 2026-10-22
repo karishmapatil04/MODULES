@@ -16,5 +16,7 @@ for student_id, details in student_data.items():
         result[student_id] = details
 
 # print output line by line
-for k, v in result.items():
-    print(k, ":", v)
+print(result)
+
+#for k, v in result.items():
+#   print(k, ":", v)

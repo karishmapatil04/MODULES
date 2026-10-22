@@ -3,5 +3,5 @@ from dotenv import load_dotenv
 
 load_dotenv()
 
-HF_API_KEY = os.getenv("HF_API_KEY", "")
+HF_API_KEY = os.getenv("HF_API_KEY", "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")
 #GROQ_API_KEY = os.getenv("GROQ_API_KEY", "")

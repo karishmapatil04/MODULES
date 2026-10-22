@@ -1,6 +1,6 @@
 import java.util.Scanner;
 
-public class FindElementArray {
+public class Main {
 
     // Main method - Entry point of the program
     public static void main(String[] args) {

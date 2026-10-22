@@ -10,17 +10,17 @@ pygame.display.set_caption('Adding image and background image')
 
 # Load and scale images directly
 background_image = pygame.transform.scale(
-    pygame.image.load('background.png').convert(),
+    pygame.image.load('C:\\Users\\samai\\OneDrive\\Documents\\Codingal_Learn\\webdev course\\MODULES\\PYTHON-COURSE\\M6-GAME_BUILDING\\L1_BEGIN_PYGAME\\space.png').convert(),
     (SCREEN_WIDTH, SCREEN_HEIGHT))
 
 penguin_image = pygame.transform.scale(
-    pygame.image.load('penguin.png').convert_alpha(), (200, 200))
+    pygame.image.load('C:\\Users\\samai\\OneDrive\\Documents\\Codingal_Learn\\webdev course\\MODULES\\PYTHON-COURSE\\M6-GAME_BUILDING\\L1_BEGIN_PYGAME\\flower.jpg').convert_alpha(), (200, 200))
 penguin_rect = penguin_image.get_rect(center=(SCREEN_WIDTH // 2,
     SCREEN_HEIGHT // 2 - 30))
 
 # Initialize font, render text, and set text position
 text = pygame.font.Font(None, 36).render('Hello World ', True,
-    pygame.Color('black'))
+    pygame.Color('white'))
 text_rect = text.get_rect(center=(SCREEN_WIDTH // 2, SCREEN_HEIGHT // 2 + 110))
 
 def game_loop():
