@@ -18,7 +18,8 @@ while chore_num <= total_chores:
     elif chore_num == 3: next_chore = "Take out the trash"
     else: next_chore = "Wash the dishes"
 
-    answer = input(f"Have you finished: {next_chore}? (yes/no): ").strip()
+    answer = input(f"Have you finished: {next_chore}? (yes/no): ")
+
     # PART 5: Only move on to the next chore once it is marked done
     if answer == "yes":
         completed_count += 1
@@ -34,7 +35,6 @@ while chore_num <= total_chores:
 # PART 7: This only prints once every chore is marked done
 print("===== ALL CHORES COMPLETE! =====")
 print("Great work finishing your entire checklist today!\n")
-
 
 # PART 9: Print the final chore checklist summary
 print("\n===== CHORE CHECKLIST SUMMARY =====")

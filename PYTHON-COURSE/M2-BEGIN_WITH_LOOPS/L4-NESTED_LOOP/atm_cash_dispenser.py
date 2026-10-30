@@ -5,7 +5,7 @@ customers_served = 0
 total_dispensed = 0
 
 serving = True
-while serving:                                # outer while -- one customer per loop
+while serving:                             # outer while -- one customer per loop
     name = input("Enter customer name: ")
     amount = int(input(f"Hello {name}! Enter withdrawal amount: "))
     if amount <= 0:

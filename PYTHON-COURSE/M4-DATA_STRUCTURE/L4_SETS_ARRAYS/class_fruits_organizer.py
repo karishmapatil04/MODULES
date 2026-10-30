@@ -15,6 +15,7 @@ print("Fruits in both baskets:", common_fruits)
 # PART 4: Create an array of fruit counts using the array module
 import array as arr
 fruit_counts = arr.array('i', [3, 5, 2, 4])
+fruit_counts[1] =56
 print("Fruit counts array:", fruit_counts)
 
 # PART 5: Add new fruit counts to the array

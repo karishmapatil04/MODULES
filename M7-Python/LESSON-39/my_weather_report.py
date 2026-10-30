@@ -29,8 +29,9 @@ else:
 # PART 5 - datetime MODULE
 import datetime
 import calendar
+from zoneinfo import ZoneInfo
 
-now = datetime.datetime.now()
+now = datetime.datetime.now(ZoneInfo("America/New_York"))
 print("City:", city)
 print("Time now:", now)
 

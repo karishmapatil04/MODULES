@@ -1,4 +1,4 @@
-city = input("Enter your city name: ")
+city = "Mumbai"
 temp = float(input("Enter today's temperature in C: "))
 
 print("City:", city)

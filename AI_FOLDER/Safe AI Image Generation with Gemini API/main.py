@@ -1,104 +1,148 @@
-import streamlit as st
-import re
-from PIL import Image
+# main.py
 from io import BytesIO
-import base64
-from openai import OpenAI
-from config import OPENAI_API_KEY  # Store your OpenAI API key here
+import requests
+import streamlit as st
+from huggingface_hub import InferenceClient
 
-# -------------------------------
-# Initialize OpenAI client
-# -------------------------------
-client = OpenAI(api_key=OPENAI_API_KEY)
+import config
 
-# -------------------------------
-# Prompt safety filter
-# -------------------------------
-def is_prompt_safe(prompt: str) -> bool:
-    forbidden_keywords = [
-        "violence", "weapon", "gun", "blood", "nude", "porn", "drugs",
-        "hate", "racism", "sex", "terror", "bomb", "abuse", "kill",
-        "death", "suicide", "self-harm", "hate speech"
-    ]
-    pattern = re.compile("|".join(forbidden_keywords), re.IGNORECASE)
-    return not bool(pattern.search(prompt))
+MODEL_ID = "stabilityai/stable-diffusion-3-medium-diffusers"
+FILTER_API_URL = "https://filters-zeta.vercel.app/api/filter"
 
-# -------------------------------
-# Generate image using OpenAI
-# -------------------------------
-def generate_image(prompt: str, size: str = "1024x1024"):
-    if not is_prompt_safe(prompt):
-        return None, "⚠️ Your prompt contains restricted or unsafe content."
-
-    try:
-        response = client.images.generate(
-            model="gpt-image-1",  # OpenAI image generation model
-            prompt=prompt,
-            size=size
-        )
-
-        image_base64 = response.data[0].b64_json
-        image_bytes = base64.b64decode(image_base64)
-        image = Image.open(BytesIO(image_bytes))
-        return image, None
-
-    except Exception as e:
-        error_message = str(e)
-        if "billing_hard_limit" in error_message:
-            return None, "💳 Billing limit reached. Please add credits in OpenAI dashboard."
-        return None, f"❌ Image generation failed: {error_message}"
-
-# -------------------------------
-# Streamlit UI
-# -------------------------------
-st.set_page_config(page_title="Safe AI Image Generator (OpenAI)", layout="centered")
-st.title("🖼️ Safe AI Image Generator (OpenAI)")
-
-st.write(
-    "Enter a description to generate a safe AI image using OpenAI. "
-    "Examples: 'A serene sunset over a mountain lake', 'A futuristic city skyline at night'"
+ENHANCE_SYS = (
+    "Improve prompts for text-to-image. Return ONLY the enhanced prompt. "
+    "Add subject, style, lighting, camera angle, background, colors. Keep it safe."
 )
 
-with st.form(key="image_gen_form"):
-    prompt = st.text_area(
-        "Image Description:",
-        height=120,
-        placeholder="Describe the image you want to generate... Be specific for better results!"
-    )
+# This is only for image quality guidance, not safety filtering
+NEGATIVE = "low quality, blurry, distorted, watermark, text, cropped"
 
-    # Optional: Let the user choose a supported size
-    size = st.selectbox(
-        "Image Size",
-        ["1024x1024", "1024x1536", "1536x1024", "auto"]
-    )
+img_client = InferenceClient(provider="hf-inference", api_key=config.HF_API_KEY)
 
-    submit = st.form_submit_button("Generate Image")
+
+def check_prompt_with_filter_api(prompt: str):
+    try:
+        response = requests.post(
+            FILTER_API_URL,
+            json={"prompt": prompt},
+            timeout=10,
+        )
+        response.raise_for_status()
+        data = response.json()
+
+        if not isinstance(data, dict):
+            return {"ok": False, "reason": "Invalid filter API response."}
+
+        return data
+
+    except Exception as e:
+        return {
+            "ok": False,
+            "reason": f"Filter API error: {str(e)}",
+        }
+
+
+def enhance_prompt(raw: str) -> str:
+    from hf import generate_response
+
+    out = generate_response(
+        f"{ENHANCE_SYS}\nUser prompt: {raw}",
+        temperature=0.4,
+        max_tokens=220,
+    )
+    return (out or raw).strip()
+
+
+def gen_image(prompt: str):
+    filter_result = check_prompt_with_filter_api(prompt)
+    if not filter_result.get("ok"):
+        return None, f"⚠️ Prompt blocked by safety filter. {filter_result.get('reason', 'Unsafe prompt')}"
+
+    try:
+        return img_client.text_to_image(
+            prompt=prompt,
+            negative_prompt=NEGATIVE,
+            model=MODEL_ID,
+        ), None
+
+    except Exception as e:
+        msg = str(e)
+
+        if "negative_prompt" in msg or "unexpected keyword" in msg:
+            try:
+                return img_client.text_to_image(
+                    prompt=prompt,
+                    model=MODEL_ID,
+                ), None
+            except Exception as e2:
+                msg = str(e2)
+
+        if any(x in msg for x in ["402", "Payment Required", "pre-paid credits"]):
+            return None, "❌ Image backend requires credits or model not available on hf-inference.\n\nRaw error: " + msg
+
+        if "404" in msg or "Not Found" in msg:
+            return None, "❌ Model not served on this provider route (hf-inference).\n\nRaw error: " + msg
+
+        return None, "Error during image generation: " + msg
+
+
+def main():
+    st.set_page_config(page_title="Safe AI Image Generator", layout="centered")
+    st.title("🖼️ Safe AI Image Generator")
+    st.info("Flow: Enter a prompt → enhance it → check it using the deployed safety API → generate the image.")
+
+    with st.form("image_form"):
+        raw = st.text_area(
+            "Image Description",
+            height=120,
+            placeholder="Example: A cozy cabin in snowy mountains at sunrise, cinematic lighting",
+        )
+        submit = st.form_submit_button("Generate Image")
 
     if submit:
-        if not prompt.strip():
+        raw = raw.strip()
+
+        if not raw:
             st.warning("⚠️ Please enter an image description.")
-        else:
-            with st.spinner("Generating image... This may take a few moments."):
-                image, error = generate_image(prompt.strip(), size)
+            return
 
-            if error:
-                st.error(error)
-            elif image:
-                st.image(image, caption="Generated Image", use_container_width=True)
-                st.session_state.generated_image = image
-            else:
-                st.error("Failed to generate image. Please try again.")
+        raw_check = check_prompt_with_filter_api(raw)
+        if not raw_check.get("ok"):
+            st.error(f"⚠️ Prompt blocked. {raw_check.get('reason', 'Unsafe prompt')}")
+            return
 
-# Download button outside the form
-if hasattr(st.session_state, 'generated_image') and st.session_state.generated_image:
-    buf = BytesIO()
-    st.session_state.generated_image.save(buf, format='PNG')
-    byte_im = buf.getvalue()
+        with st.spinner("Enhancing your prompt..."):
+            final_prompt = enhance_prompt(raw)
 
-    st.download_button(
-        label="⬇️ Download Generated Image",
-        data=byte_im,
-        file_name="ai_generated_image.png",
-        mime="image/png",
-        help="Click to download the generated image"
-    )
+        enhanced_check = check_prompt_with_filter_api(final_prompt)
+        if not enhanced_check.get("ok"):
+            st.error(f"⚠️ Enhanced prompt blocked. {enhanced_check.get('reason', 'Unsafe prompt')}")
+            return
+
+        st.markdown("#### Enhanced Prompt")
+        st.code(final_prompt)
+
+        with st.spinner("Generating image..."):
+            img, err = gen_image(final_prompt)
+
+        if err:
+            st.error(err)
+            return
+
+        st.image(img, caption="Generated Image", use_container_width=True)
+        st.session_state.generated_image = img
+
+    img = st.session_state.get("generated_image")
+    if img:
+        buf = BytesIO()
+        img.save(buf, format="PNG")
+        st.download_button(
+            "📥 Download Image",
+            buf.getvalue(),
+            "ai_generated_image.png",
+            "image/png",
+        )
+
+
+if __name__ == "__main__":
+    main()
